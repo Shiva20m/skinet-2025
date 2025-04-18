@@ -1,3 +1,4 @@
+using API.Middlewares;
 using Core.Interfaces;
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
@@ -13,10 +14,16 @@ builder.Services.AddDbContext<StoreContext>(opt=>
 });
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+// cors - cross origion resource sharing
+builder.Services.AddCors();
 
 var app = builder.Build();
 
-app.UseAuthorization();
+app.UseMiddleware<ExceptionMiddleware>();
+
+// use cors
+app.UseCors(x=> x.AllowAnyHeader().AllowAnyMethod()
+    .WithOrigins("http;//localhost:4200", "https://localhost:4200"));
 
 // to add the seed data automatically into the database using entity framework
 app.MapControllers();
