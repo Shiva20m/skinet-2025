@@ -23,6 +23,10 @@ namespace Infrastructure.Data
             {
                 query = query.Distinct();
             }
+            if(spec.isPaginationEnable)
+            {
+                query= query.Skip(spec.Skip).Take(spec.Take);
+            }
             return query;
         }
 
@@ -48,6 +52,10 @@ namespace Infrastructure.Data
             if(spec.isDistinct==true)
             {
                 selectQuery = selectQuery?.Distinct();
+            }
+            if(spec.isPaginationEnable)
+            {
+                selectQuery= selectQuery?.Skip(spec.Skip).Take(spec.Take);
             }
             return selectQuery ?? query.Cast<TResult>();
         }
