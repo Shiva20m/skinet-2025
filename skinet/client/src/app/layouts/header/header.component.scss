@@ -1,0 +1,25 @@
+
+// class b inside a - .a .b
+.custom-badge.mat-badge-large .mat-badge-content
+{
+    min-height: 19px;
+    min-width: 19px;
+    line-height: 19px;
+}
+.custom-badge .material-icons
+{
+    font-size: 32px;
+}
+.custom-badge .mat-icon
+{
+    overflow:visible;
+    width: 32px;
+}
+.custom-login.mat-mdc-unelevated-button
+{
+    border-radius: 7%;
+}
+.custom-register.mat-mdc-unelevated-button
+{
+    border-radius: 7%;
+}
