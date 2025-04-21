@@ -3,15 +3,15 @@ namespace Core.Specifications
     public class ProductSpecParams
     {
         private const int maxPageSize= 50;
-        public int  pageIndex { get; set; } = 1;
-        private int _pageSize = 6;
+        public int  PageIndex { get; set; } = 1;
+        private int _pageSize = 10;
         public int PageSize
         {
-            get => (_pageSize <= 0) ? 6 : _pageSize;
+            get => _pageSize;
             set
             {
                 Console.WriteLine($"PageSize set to: {value}");
-                _pageSize = (value <= 0) ? 6 : Math.Min(value, maxPageSize);
+                _pageSize = (value > maxPageSize) ? maxPageSize : value;
             }
         }
         private List<string> _brands=[];

@@ -11,7 +11,8 @@ namespace Core.Specifications
         (productSpecParams.Types.Count == 0 || productSpecParams.Types.Contains(x.Type))
         )
         { 
-            ApplyPaging(productSpecParams.PageSize * (productSpecParams.pageIndex-1), productSpecParams.PageSize);
+            
+            ApplyPaging(productSpecParams.PageSize*(productSpecParams.PageIndex-1), productSpecParams.PageSize);
             switch (productSpecParams.sort)
             {
                 case "priceAsc":
@@ -20,9 +21,9 @@ namespace Core.Specifications
                 case "priceDesc":
                     OrderByDescending = x=>x.Price;
                     break;    
-                default:
-                    OrderBy = x=>x.Name;
-                    break;
+                // default:
+                //     OrderBy = x=>x.Name;
+                //     break;
             }           
         }
 

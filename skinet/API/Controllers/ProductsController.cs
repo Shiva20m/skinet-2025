@@ -17,7 +17,7 @@ namespace API.Controllers
         public async Task<ActionResult<IReadOnlyList<Product>>> GetProducts([FromQuery]ProductSpecParams productSpecParams)
         {
             var spec = new ProductSpecification(productSpecParams);
-            var paggination = await CreatePagedResult(genericRepository, spec, productSpecParams.pageIndex, productSpecParams.PageSize);
+            var paggination = await CreatePagedResult(genericRepository, spec, productSpecParams.PageIndex, productSpecParams.PageSize);
             return Ok(paggination);
             
         }
