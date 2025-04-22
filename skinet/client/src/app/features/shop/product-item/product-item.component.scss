@@ -2,3 +2,17 @@
 {
     border-radius: 3%;
 }
+.card-wrapper {
+    perspective: 600px; 
+    display: inline-block; 
+}
+.product-card {
+    transition: transform 0.2s, box-shadow 0.2s;
+    transform-style: preserve-3d;
+    will-change: transform;
+}
+.product-card:hover {
+    transform: scale(1) translateZ(15px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}

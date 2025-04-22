@@ -23,3 +23,10 @@
 {
     border-radius: 7%;
 }
+
+a {
+    &.active
+    {
+        color: #1E61C6;
+    }
+}

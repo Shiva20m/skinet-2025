@@ -1,0 +1,11 @@
+.add-to-cart-btn {
+    height: 56px; /* Match the mat-form-field height */
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    border-radius: 8px;
+}
+
+.quantity-custom {
+    width: 140px;
+}

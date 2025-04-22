@@ -38,6 +38,11 @@ export class ShopService {
     params = params.append('pageIndex', shopParams.pageNumber);
     return this.http.get<Envelope<Pagination<Product>>>(this.baseUrl + 'products', {params});
   }
+  // get product by id
+  getProduct(id:number)
+  {
+    return this.http.get<Product>(this.baseUrl + 'products/' + id);
+  }
   // applying the filter
   getBrands()
   {
