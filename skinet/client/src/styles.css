@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.mdc-notched-outline__notch {
+  border-right-style: none !important;
+}
+
+.mat-mdc-snack-bar-container.snack-error .mat-mdc-snackbar-surface {
+  background-color: #ba1a1a !important;
+  color: #fff !important;
+}
+
+.mat-mdc-snack-bar-container.snack-success .mat-mdc-snackbar-surface {
+  background-color: #2e7d32 !important;
+  color: #fff !important;
+}
+
+.mat-mdc-snack-bar-container.snack-error .mat-mdc-button, 
+.mat-mdc-snack-bar-container.snack-success .mat-mdc-button {
+  color: #fff !important;
+}
+
+

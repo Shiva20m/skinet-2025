@@ -1,4 +1,4 @@
-<header class="border-b p-1 w-full shadow-md">
+<header class="border-b p-1 w-full shadow-md max-h-20 fixed top-0 z-50 bg-white">
     <div class="flex align-middle items-center justify-between max-w-screen-2xl mx-auto">
         <img routerLink="/" src="images/logo.png" alt="app-logo" class="max-h-16">
         <nav class="flex gap-3 my-2 uppercase text-2xl">
@@ -8,7 +8,7 @@
             [routerLinkActiveOptions]="{exact:true}"
             >Home</a>
             <a routerLink="/shop" routerLinkActive="active">Shop</a>
-            <a>Contact</a>
+            <a routerLink="/test-error" routerLinkActive="active">Error</a>
             
         </nav>
         <div class="flex gap-3 items-center">
@@ -22,3 +22,10 @@
     </div>
 
 </header>
+
+<!-- adding the lazy loading to the header component -->
+@if (busyService.loading) {
+    <mat-progress-bar mode="indeterminate" class="fixed top-20 z-50">
+
+    </mat-progress-bar>
+}
