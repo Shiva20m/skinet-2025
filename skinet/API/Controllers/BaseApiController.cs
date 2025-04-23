@@ -7,7 +7,7 @@ namespace API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class BaseApiController:ControllerBase
+    public class BaseApiController():ControllerBase
     {
         protected async Task<ActionResult> CreatePagedResult<T>(IGenericRepository<T> genericRepository, ISpecification<T> spec,
         int pageIndex, int PageSize) where T: BaseEntity
